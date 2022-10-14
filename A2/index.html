@@ -72,7 +72,7 @@
                     <br>
                     <br>
                     <div class = "pure-u-1-1">
-                        <div id = "choropleth_map" class = "vis-container"></div>
+                        <div id = "vis1" class = "vis-container"></div>
                         <p>Note: hover for more details</p>
                        
                     </div>
@@ -91,7 +91,7 @@
                     <br>
                     <br>
                     <div class = "pure-u-1-1">
-                        <div id = "bubble_plot" class = "vis-container"></div>
+                        <div id = "vis2" class = "vis-container"></div>
                         <p></p>
                         <br>
                         <p></p>
@@ -114,7 +114,7 @@
             </div>
             <div class = "pure-u-1-1">
                 <div class = "text1">
-                    <div id = "isotype_chart"  class = "vis-container"></div>
+                    <div id = "vis3"  class = "vis-container"></div>
                     <br>
                     <br>
                     <p></p>
@@ -142,7 +142,7 @@
                 </div>
             </div>
             <div class = "pure-u-2-3">
-                <div id = "hybrid_line_graph" class = "vis-container2"></div>
+                <div id = "vis4" class = "vis-container2"></div>
             </div>
         </div>
         
@@ -157,7 +157,7 @@
                     <br>
                     <br>
                     <div class = "pure-u-1-1">
-                        <div id = "distribution_area_graph" class = "vis-container"></div>
+                        <div id = "vis5" class = "vis-container"></div>
                     </div>
                     <br>
                     <br>
@@ -172,25 +172,26 @@
     </div>
    
 <script type = "text/javascript">
-    var vis = ["https://wleo0018.github.io/FIT3179/A2/js/symbol_map.json",
-               "https://wleo0018.github.io/FIT3179/A2/js/symbol_map.json/property.json",
-               "https://wleo0018.github.io/FIT3179/A2/js/symbol_map.json/price_region.json",
-               "https://wleo0018.github.io/FIT3179/A2/js/symbol_map.json/area_chart.json",
-               "https://wleo0018.github.io/FIT3179/A2/js/symbol_map.json/line-chart.json"]
-  
-    vegaEmbed('#choropleth_map', vis[0], {"actions": false}).then(function(result) {// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+
+    
+    var specVis1 = "https://wleo0018.github.io/FIT3179/A2/js/symbol_map.json";
+    vegaEmbed('#vis1', specVis1, {"actions": false}).then(function(result) {// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
     
-    vegaEmbed('#bubble_plot', vis[1], {"actions": false}).then(function(result) {// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    var specVis2 = "https://wleo0018.github.io/FIT3179/A2/js/property.json";
+    vegaEmbed('#vis2', specVis2, {"actions": false}).then(function(result) {// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
   
-    vegaEmbed('#isotype_chart', vis[2], {"actions": false}).then(function(result) {// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    var specVis3 ="https://wleo0018.github.io/FIT3179/A2/js/price_region.json";
+    vegaEmbed('#vis3', specVis3, {"actions": false}).then(function(result) {// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
   
-    vegaEmbed('#distribution_area_graph', vis[3], {"actions": false}).then(function(result) {// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    var specVis4 = "https://wleo0018.github.io/FIT3179/A2/js/area_chart.json";
+    vegaEmbed('#vis4', specVis4, {"actions": false}).then(function(result) {// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
   
-    vegaEmbed('#hybrid_line_graph', vis[4], {"actions": false}).then(function(result) {// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    var specVis5 = "https://wleo0018.github.io/FIT3179/A2/js/line-chart.json";
+    vegaEmbed('#vis5', specVis5, {"actions": false}).then(function(result) {// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
 </script>
         
