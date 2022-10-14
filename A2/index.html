@@ -72,7 +72,7 @@
                     <br>
                     <br>
                     <div class = "pure-u-1-1">
-                        <div id = "vis1"></div>
+                        <div id = "choropleth_map" class = "vis-container"></div>
                         <p>Note: hover for more details</p>
                         <br>
                     </div>
@@ -175,7 +175,7 @@
 
     
     var specVis1 = "https://wleo0018.github.io/FIT3179/A2/js/symbol_map.json";
-    vegaEmbed('#vis1', specVis1, {"actions": false}).then(function(result) {// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    vegaEmbed('#choropleth_map', specVis1, {"actions": false}).then(function(result) {// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
     
     var specVis2 = "https://wleo0018.github.io/FIT3179/A2/js/property.json";
