@@ -1,0 +1,106 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {"text": "Trend of prices over years", "anchor": "middle"},
+  "width": 725,
+  "height": 525,
+  "background": null,
+  "data": {
+    "url": "https://raw.githubusercontent.com/wleo0018/FIT3179/main/Melbourne_housing_FULL.csv"
+  },
+  "transform": [
+    {"filter": "datum.Price != ''"},
+    {"filter": "datum.Date != ''"}
+  ],
+  "vconcat": [
+    {
+      "width": 400,
+      "height": 300,
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal",
+          "axis": {"labels": false, "title": null}
+        }
+      },
+      "layer": [
+        {
+          "encoding": {
+            "color": {"field": "Type", "type": "nominal", "title": "Category"},
+            "y": {"field": "Price", "type": "quantitative", "title": "Price"}
+          },
+          "layer": [
+            {"mark": "line"},
+            {"transform": [{"filter": {"selection": "hover"}}], "mark": "point"}
+          ]
+        },
+        {
+          "transform": [
+            {"pivot": "Type", "value": "Price", "groupby": ["Date"]}
+          ],
+          "mark": "rule",
+          "encoding": {
+            "opacity": {
+              "condition": {"value": 0.3, "selection": "hover"},
+              "value": 0
+            },
+            "tooltip": [
+              {"field": "Date", "type": "temporal"},
+              {"field": "Price", "type": "quantitative"}
+            ]
+          },
+          "selection": {
+            "hover": {
+              "type": "single",
+              "fields": ["Date"],
+              "nearest": true,
+              "on": "mouseover",
+              "empty": "none",
+              "clear": "mouseout"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "width": 400,
+      "height": 300,
+      "mark": {
+        "type": "area",
+        "line": {"color": "purple"},
+        "color": {
+          "x1": 1,
+          "y1": 1,
+          "x2": 1,
+          "y2": 0,
+          "gradient": "linear",
+          "stops": [
+            {"offset": 0, "color": "white"},
+            {"offset": 1, "color": "purple"}
+          ]
+        }
+      },
+      "encoding": {
+        "x": {"field": "Date", "type": "temporal", "title": null},
+        "y": {
+          "field": "Price",
+          "type": "quantitative",
+          "scale": {"domain": [0, 800000000]}
+        },
+        "tooltip": [
+          {"field": "Date", "type": "temporal"},
+          {"field": "Price", "type": "quantitative"}
+        ]
+      }
+    }
+  ],
+  "resolve": {"scale": {"x": "shared", "y": "independent"}},
+  "config": {
+    "axis": {"labelFont": "Open Sans", "titleFont": "Open Sans"},
+    "header": {"labelFont": "Open Sans", "titleFont": "Open Sans"},
+    "mark": {"font": "Open Sans"},
+    "legend": {"labelFont": "Open Sans", "titleFont": "Open Sans"},
+    "title": {"font": "Open Sans"},
+    "style": {"cell": {"stroke": "transparent"}},
+    "text": {"align": "center", "fontWeight": "bold", "font": "Open Sans"}
+  }
+}

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+    <script src = "https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src = "https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+  
+    <!-- Import vega-embed -->
+    <script src = "https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  
+    <!-- Import pure.css -->
+    <link rel = "stylesheet"
+          href = "https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+          integrity = "sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" 
+          crossorigin = "anonymous">
+  
+    <meta name = "viewport"
+          content = "width = device-width, initial-scale = 1">
+  
+    <!-- Google font -->
+    <link href = "https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" 
+          rel = "stylesheet">
+
+    <!-- custom style -->
+    <style>
+        * {font-family: 'Open Sans'; text-align: justify}
+        h1 {font-size: 40px; font-weight: 600; text-align: center; font-weight: 600; padding: 50px; background: linear-gradient(90deg, rgba(242, 255, 0, 0.6) 0%, rgba(253, 113, 29, 0.5) 50%, rgba(252, 69, 69, 0.7) 100%);}
+        h2 {font-size: 20px; font-weight: 600; width: 40%; padding: 15px; background: linear-gradient(90deg, rgba(242, 255, 0, 0.6) 0%, rgba(253, 113, 29, 0.5) 50%, rgba(252, 69, 69, 0.7) 100%);}
+        body {background: linear-gradient(90deg, rgba(242, 255, 0, 0.6) 0%, rgba(253, 113, 29, 0.5) 50%, rgba(252, 69, 69, 0.7) 100%);}
+        .page {width: 950px; background-color: white; margin: auto; padding: 50px; padding-top: 35px;}
+        .vline {border-left: 8px solid black; height: 125px; position: relative}
+        .vis-container {width: 100%; text-align: center}
+        .vis-container2 {width: 100%; text-align: center; left: 4%}
+        .text1 {padding-left: 16px}
+        .text2 {text-transform: uppercase; color: black; padding: 0.4em 0; font-size: 75%; letter-spacing: 0.1em;}
+        .pure-g {margin-bottom: 25px;}
+    </style>
+</head>
+  
+<body>
+    <div class = "page">
+        
+        <!-- Header -->
+        <div class = "pure-g">
+            <div class = "pure-u-1-1">
+                <h1>Melbourne house pricing</h1>
+            </div>
+        </div>
+        
+        <!-- Introduction -->
+        <div style = "position: relative; left: 6%" class = "vline">
+            <div style = "position: relative; left: 2%" class = "text2">
+                <p><b>Introduction</b></p>
+                <p><b>•</b>&nbsp;&nbsp;&nbsp;This visualisation shows the price of melbourne house.</p>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <hr style = "width: 25%">
+        <br>
+        <br>
+        <br>
+   
+        <!-- Choropleth Map -->
+        <div class = "pure-g">
+            <div class = "pure-u-1-1">
+                <h2>How does the melbourne?</h2>
+                <div class = "text1">
+                    <p>The symbol map below gives a good overall view of the price distribution.</p>
+                    <br>
+                    <br>
+                    <div class = "pure-u-1-1">
+                        <div id = "choropleth_map" class = "vis-container"></div>
+                        <p>Note: hover for more details</p>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+   
+        <!-- Bubble Plot -->
+        <div class = "pure-g">
+            <div class = "pure-u-1-1">
+                <h2>Each on its own.</h2>
+                <div class = "text1">
+                    <p>The bubble plot below provides a good interface to see the countries' deaths and recoveries by region and/or population.</p>
+                    <br>
+                    <br>
+                    <div class = "pure-u-1-1">
+                        <div id = "bubble_plot" class = "vis-container"></div>
+                        <p>Note: - zoom in to enlarge smaller dots (double click to reset)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- drag around to pan the map (double click to reset)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- click on the legend entries for highlighting</p>
+                        <br>
+                        <p><b>African countries</b> are clustered more closely and have <b>lower recoveries and deaths</b> compared to others. According to Soy (2020), Africa's case-fatality ratio (CFR) is lower than the global CFR. The <b>Americas</b> have more countries with <b>higher death-recovery ratios</b>. The rest of the continents <b>average</b> around <b>1k deaths and 10k recoveries</b>. With decreased social gatherings and more precautions taken, hopefully the countries can stay in higher positions in recoveries (nearer to the top) and lower positions in deaths (nearer to the left).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+   
+        <!-- Isotype Chart -->
+        <div class = "pure-g">
+            <div class = "pure-u-1-1">
+                <h2>Greet thy neighbours.</h2>
+                <div class = "text1">
+                    <p>The isotype chart next gives a clear picture on mean cases by WHO region.</p>
+                    <br>
+                    <br>
+                </div>
+            </div>
+            <div class = "pure-u-1-1">
+                <div class = "text1">
+                    <div id = "isotype_chart"  class = "vis-container"></div>
+                    <br>
+                    <br>
+                    <p>The <b>Americas</b> sustained <b>most cases</b> as a whole but is also due to <b>cases in USA</b> for being <b>top</b> in the world, skewing the reading up, <b>despite better healthcare</b> policies. The <b>African region</b> notably has <b>lowest average</b> case - the continent of a billion people had <b>fewer deaths</b> than most other countries <b>despite fragile health systems</b> generally. Other regions have a reasonable number of average cases. While some countries are wealthier or equipped with better healthcare, the <b>overall figures</b> are within the <b>expected</b> range.</p>
+                </div>
+            </div>
+        </div>
+        
+        <br>
+        
+        <!-- Hybrid Line Graph -->
+        <div class = "pure-g">
+            <div class = "pure-u-1-1">
+                <h2>Day by day.</h2>
+            </div>
+            <div class = "pure-u-1-3">
+                <div class = "text1">
+                    <p>The line graph on the right is divided into two parts: one for categoric cases and the other for number of countries.</p>
+                    <p>Note: hover around for more details</p>
+                    <br>
+                    <p>The graph of categoric cases is a clear picture of how the outbreak escalated. Up until 20th <b>March</b>, the line stays <b>low</b> as the rise in cases was steady.</p>
+                    <p>Subsequently, the line graph increases exponentially. The <b>virus aggressively spread</b> out in such a short time. On the bright side, recoveries soar relatively higher than deaths and active cases mostly due to precautions taken and intensive medical assistance.</p>
+                    <p>We can see that the number of countries infected were small up until around March. Most of the countries became infected from there onwards.</p>
+                    <p>IsGlobal (2020) states that its main tranmission path is by the air. Many countries contracted the virus because of travels and movements which were too late to stop in the early stages.</p>
+                    <p>However, with more awareness and decreased outdoor activities, deaths and active cases were kept on a slow increase.</p>
+                </div>
+            </div>
+            <div class = "pure-u-2-3">
+                <div id = "hybrid_line_graph" class = "vis-container2"></div>
+            </div>
+        </div>
+        
+        <br>
+        
+        <!-- Distribution Area Graph -->
+        <div class = "pure-g">
+            <div class = "pure-u-1-1">
+                <h2>The story so far...</h2>
+                <div class = "text1">
+                    <p>The area graphs below show the price for different number of bedroom, bathroom and car parking slot.</p>
+                    <br>
+                    <br>
+                    <div class = "pure-u-1-1">
+                        <div id = "distribution_area_graph" class = "vis-container"></div>
+                    </div>
+                    <br>
+                    <br>
+                    <p>Compared to recoveries, a smaller area covered in the graph of deaths per 100 cases is good news. The area for deaths per 100 recoveries is almost the same as the deaths per 100 cases. This shows that the recoveries is almost as many as confirmed cases. Hopefully, with sustained precaution, we may be able to further control the outbreak of this virus.</p>
+                </div>
+            </div>
+        </div>
+        
+        <br>
+        
+        
+    </div>
+   
+<script type = "text/javascript">
+    var vis = ["symbol_map.json",
+               "property.json",
+               "price_region.json",
+               "area_chart.json",
+               "line-chart.json"]
+  
+    vegaEmbed('#choropleth_map', vis[0], {"actions": false}).then(function(result) {// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+    
+    vegaEmbed('#bubble_plot', vis[1], {"actions": false}).then(function(result) {// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  
+    vegaEmbed('#isotype_chart', vis[2], {"actions": false}).then(function(result) {// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  
+    vegaEmbed('#distribution_area_graph', vis[3], {"actions": false}).then(function(result) {// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  
+    vegaEmbed('#hybrid_line_graph', vis[4], {"actions": false}).then(function(result) {// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+</script>
+        
+</body>

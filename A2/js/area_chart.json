@@ -1,0 +1,51 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Price based on number of bedroom, bathroom and car parking slot",
+    "anchor": "middle"
+  },
+  "width": 725,
+  "height": 525,
+  "background": null,
+  "data": {
+    "url": "https://raw.githubusercontent.com/wleo0018/FIT3179/main/Melbourne_housing_FULL.csv"
+  },
+  "hconcat": [
+    {
+      "width": 250,
+      "height": 275,
+      "mark": "area",
+      "encoding": {
+        "x": {"field": "Bedroom2", "type": "quantitative", "title": "bedrooms"},
+        "y": {"field": "Price", "type": "quantitative", "title": "Price"}
+      }
+    },
+    {
+      "width": 250,
+      "height": 275,
+      "mark": "area",
+      "encoding": {
+        "x": {"field": "Bathroom", "type": "quantitative", "title": "Bathroom"},
+        "y": {"field": "Price", "type": "quantitative", "title": null}
+      }
+    },
+    {
+      "width": 250,
+      "height": 275,
+      "mark": "area",
+      "encoding": {
+        "x": {"field": "Car", "type": "quantitative", "title": "Car slot"},
+        "y": {"field": "Price", "type": "quantitative", "title": null}
+      }
+    }
+  ],
+  "config": {
+    "axis": {"labelFont": "Open Sans", "titleFont": "Open Sans"},
+    "header": {"labelFont": "Open Sans", "titleFont": "Open Sans"},
+    "mark": {"font": "Open Sans"},
+    "legend": {"labelFont": "Open Sans", "titleFont": "Open Sans"},
+    "title": {"font": "Open Sans"},
+    "style": {"cell": {"stroke": "transparent"}},
+    "text": {"align": "center", "fontWeight": "bold", "font": "Open Sans"}
+  }
+}
