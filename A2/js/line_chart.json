@@ -26,7 +26,12 @@
         {
           "encoding": {
             "color": {"field": "Type", "type": "nominal", "title": "Category"},
-            "y": {"field": "Price", "type": "quantitative", "title": "Price"}
+            "y": {
+              "aggregate": "mean",
+              "field": "Price",
+              "type": "quantitative",
+              "title": "Price"
+            }
           },
           "layer": [
             {"mark": "line"},
