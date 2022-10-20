@@ -23,9 +23,9 @@
     <!-- custom style -->
     <style>
         * {font-family: 'Open Sans'; text-align: justify}
-        h1 {font-size: 40px; font-weight: 600; text-align: center; font-weight: 600; padding: 50px; background: linear-gradient(90deg, rgba(242, 255, 0, 0.6) 0%, rgba(253, 113, 29, 0.5) 50%, rgba(252, 69, 69, 0.7) 100%);}
-        h2 {font-size: 20px; font-weight: 600; width: 40%; padding: 15px; background: linear-gradient(90deg, rgba(242, 255, 0, 0.6) 0%, rgba(253, 113, 29, 0.5) 50%, rgba(252, 69, 69, 0.7) 100%);}
-        body {background: linear-gradient(90deg, rgba(128, 255, 0, 0.6) 0%, rgba(29, 182, 253, 0.5) 50%, rgba(69, 252, 249, 0.7) 100%);}
+        h1 {font-size: 40px; font-weight: 600; text-align: center; font-weight: 600; padding: 50px; background: linear-gradient(90deg, rgba(0, 213, 255, 0.6) 0%, rgba(29, 208, 253, 0.5) 50%, rgba(69, 142, 252, 0.7) 100%);}
+        h2 {font-size: 20px; font-weight: 600; width: 40%; padding: 15px; background: linear-gradient(90deg, rgba(0, 242, 255, 0.6) 0%, rgba(29, 253, 234, 0.5) 50%, rgba(69, 218, 252, 0.7) 100%);}
+        body {background: linear-gradient(90deg, rgba(0, 217, 255, 0.6) 0%, rgba(29, 182, 253, 0.5) 50%, rgba(69, 252, 249, 0.7) 100%);}
         .page {width: 950px; background-color: white; margin: auto; padding: 50px; padding-top: 35px;}
         .vline {border-left: 8px solid black; height: 125px; position: relative}
         .vis-container {width: 100%; text-align: center}
@@ -42,7 +42,7 @@
         <!-- Header -->
         <div class = "pure-g">
             <div class = "pure-u-1-1">
-                <h1>Melbourne house pricing</h1>
+                <h1>MELBOURNE HOUSE PRICING</h1>
             </div>
         </div>
         
@@ -50,7 +50,7 @@
         <div style = "position: relative; left: 6%" class = "vline">
             <div style = "position: relative; left: 2%" class = "text2">
                 <p><b>Introduction</b></p>
-                <p><b>•</b>&nbsp;&nbsp;&nbsp;This visualisation shows the price of melbourne house.</p>
+                <p>The main topic of this data visualisation is to study the price of the house in Melbourne.</p>
             </div>
         </div>
         <br>
@@ -61,12 +61,12 @@
         <br>
         <br>
    
-        <!-- Choropleth Map -->
+        <!-- Symbol Map -->
         <div class = "pure-g">
             <div class = "pure-u-1-1">
                 <h2>Price of house on Melbourne Map</h2>
                 <div class = "text1">
-                    <p>The symbol map below gives a good overall view of the price distribution.</p>
+                    <p>The map below gives a good overall view of the price distribution.</p>
                     <br>
                     <br>
                     <div class = "pure-u-1-1">
@@ -74,25 +74,26 @@
                         <p>Note: hover to see tooltip.</p>
                         <br>
                     </div>
+                    <p>From the map, we can see that most of the high price house are accumulated in the center area of Melbourne.</p>
+                    <p>It seems like the house of type "h" (house) is has proportion on the map but this may not be enough to tell</p>
+                    <p>how prices in Melbourne works. Let's take a look on how price perform vs other features.</p>
                 </div>
             </div>
         </div>
 
         <br>
    
-        <!-- Bubble Plot -->
+        <!-- chart2 -->
         <div class = "pure-g">
             <div class = "pure-u-1-1">
                 <h2>Number of property in each region</h2>
                 <div class = "text1">
-                    <p></p>
+                    <p>As Melbourne is a big city, we can divide it into several areas. The visualisation below shows number of property in each region</p>
                     <br>
                     <br>
                     <div class = "pure-u-1-1">
                         <div id = "vis2" class = "vis-container"></div>
-                        <p></p>
-                        <br>
-                        <p></p>
+                        <p>Note: Select the type to find out numbers of property in each region</p>
                     </div>
                 </div>
             </div>
@@ -100,12 +101,12 @@
 
         <br>
    
-        <!-- Isotype Chart -->
+        <!-- Chart3 -->
         <div class = "pure-g">
             <div class = "pure-u-1-1">
-                <h2>header2.</h2>
+                <h2>Price of houses by region</h2>
                 <div class = "text1">
-                    <p></p>
+                    <p>The visualisation below shows price oh houses in each region</p>
                     <br>
                     <br>
                 </div>
@@ -113,30 +114,26 @@
             <div class = "pure-u-1-1">
                 <div class = "text1">
                     <div id = "vis3"  class = "vis-container"></div>
-                    <br>
-                    <br>
-                    <p></p>
+                    <p>Note: Select the type to find out price of property in each region</p>
                 </div>
             </div>
         </div>
         
         <br>
         
-        <!-- Hybrid Line Graph -->
+        <!-- chart4 -->
         <div class = "pure-g">
             <div class = "pure-u-1-1">
-                <h2>header3.</h2>
+                <h2>House prices over the time</h2>
             </div>
             <div class = "pure-u-1-3">
                 <div class = "text1">
-                    <p></p>
-                    <p>Note: hover around for more details</p>
-                    <br>
-                    <p>test</p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
+                    <p>The visualisation above shows the trend of house</p>
+                    <p>prices over 2016 to 2018. Generally, an decline</p>
+                    <p>in prices can be observed. It also shows that the</p>
+                    <p>difference of prices between three type of houses.</p>
+                    <p>The visualisation below shows the overall price by</p>
+                    <p>days. Hover around to see each individual values.</p>
                 </div>
             </div>
             <div class = "pure-u-2-3">
@@ -146,20 +143,25 @@
         
         <br>
         
-        <!-- Distribution Area Graph -->
+        <!-- chart5 -->
         <div class = "pure-g">
             <div class = "pure-u-1-1">
-                <h2></h2>
+                <h2>Price compared with other attributes</h2>
                 <div class = "text1">
                     <p>The area graphs below show the price for different number of bedroom, bathroom and car parking slot.</p>
                     <br>
                     <br>
                     <div class = "pure-u-1-1">
                         <div id = "vis4" class = "vis-container"></div>
+                        <p>As the data shown above, even though people may think that the more rooms or carpark, the higher the price, </p>
+                        <p>but the visualisation tells thats it was not the case. This could be happened due to a house with a lot of</p>
+                        <p>of rooms in rural area may costs lower than a house with less rooms in city area.</p>
                     </div>
                     <br>
                     <br>
-                    <p></p>
+                    <p>In conclusion, we can tell that the price of Melbourne has been dropping for years. However, the price in center area</p>
+                    <p>is still very high. If someone looking forward to live in Melbourne, they should consider which region is good to live</p>
+                    <p>as the prices varies a lot based on the visualisations above.</p>
                 </div>
             </div>
         </div>
