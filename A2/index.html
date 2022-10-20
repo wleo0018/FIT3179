@@ -2,11 +2,9 @@
 <html>
     
 <head>
-    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+    <!-- Import Vega & Vega-Lite-->
     <script src = "https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
     <script src = "https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
-  
-    <!-- Import vega-embed -->
     <script src = "https://cdn.jsdelivr.net/npm/vega-embed@6.20.8"></script>
   
     <!-- Import pure.css -->
@@ -27,7 +25,7 @@
         * {font-family: 'Open Sans'; text-align: justify}
         h1 {font-size: 40px; font-weight: 600; text-align: center; font-weight: 600; padding: 50px; background: linear-gradient(90deg, rgba(242, 255, 0, 0.6) 0%, rgba(253, 113, 29, 0.5) 50%, rgba(252, 69, 69, 0.7) 100%);}
         h2 {font-size: 20px; font-weight: 600; width: 40%; padding: 15px; background: linear-gradient(90deg, rgba(242, 255, 0, 0.6) 0%, rgba(253, 113, 29, 0.5) 50%, rgba(252, 69, 69, 0.7) 100%);}
-        body {background: linear-gradient(90deg, rgba(242, 255, 0, 0.6) 0%, rgba(253, 113, 29, 0.5) 50%, rgba(252, 69, 69, 0.7) 100%);}
+        body {background: linear-gradient(90deg, rgba(128, 255, 0, 0.6) 0%, rgba(29, 182, 253, 0.5) 50%, rgba(69, 252, 249, 0.7) 100%);}
         .page {width: 950px; background-color: white; margin: auto; padding: 50px; padding-top: 35px;}
         .vline {border-left: 8px solid black; height: 125px; position: relative}
         .vis-container {width: 100%; text-align: center}
@@ -66,14 +64,14 @@
         <!-- Choropleth Map -->
         <div class = "pure-g">
             <div class = "pure-u-1-1">
-                <h2>melbourne</h2>
+                <h2>Price of house on Melbourne Map</h2>
                 <div class = "text1">
                     <p>The symbol map below gives a good overall view of the price distribution.</p>
                     <br>
                     <br>
                     <div class = "pure-u-1-1">
                         <div id = "vis1" class = "vis-container"></div>
-                        <p>Note: hover for more details</p>
+                        <p>Note: hover to see tooltip.</p>
                         <br>
                     </div>
                 </div>
@@ -85,7 +83,7 @@
         <!-- Bubble Plot -->
         <div class = "pure-g">
             <div class = "pure-u-1-1">
-                <h2>testing</h2>
+                <h2>Number of property in each region</h2>
                 <div class = "text1">
                     <p></p>
                     <br>

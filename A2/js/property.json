@@ -1,21 +1,37 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {"text": "Property count in each region"},
+  "title": {"text": "Number of property in each region"},
   "width": 650,
   "height": 500,
   "background": null,
   "data": {
     "url": "https://raw.githubusercontent.com/wleo0018/FIT3179/main/Melbourne_housing_FULL.csv"
   },
+  "transform": [
+    {"filter": "datum.Propertycount != ''"},
+    {"filter": "Type_selection == null |datum.Type==Type_selection"}
+  ],
+  "params": [
+    {
+      "name": "Type_selection",
+      "bind": {
+        "input": "select",
+        "options": [null, "h", "t", "u"],
+        "labels": ["Show All", "House", "Townhouse", "Unit"],
+        "name": "Type Selection: "
+      }
+    }
+  ],
   "mark": "bar",
   "encoding": {
     "x": {
       "aggregate": "mean",
       "field": "Propertycount",
       "type": "quantitative",
-      "title": "Count of Property"
+      "title": "Number of property"
     },
-    "y": {"field": "Regionname", "type": "nominal", "title": "Region"}
+    "y": {"field": "Regionname", "type": "nominal", "title": "Region"},
+    "color": {"field": "Type", "type": "nominal"}
   },
   "config": {}
 }

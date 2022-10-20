@@ -44,29 +44,22 @@
         "url": "https://raw.githubusercontent.com/wleo0018/FIT3179/main/Melbourne_housing_FULL.csv"
       },
       "transform": [{"filter": "datum.Lattitude != ''"}],
-      "mark": {"type": "circle", "tooltip": {"content": "data"}},
+      "mark": {"type": "circle"},
       "encoding": {
         "longitude": {"field": "Longtitude", "type": "quantitative"},
         "latitude": {"field": "Lattitude", "type": "quantitative"},
-        "size": {
-          "field": "Price",
-          "type": "quantitative",
-          "title": "Price",
-          "scale": {"domain": [0, 10000000]}
-        },
+        "size": {"field": "Price", "type": "quantitative", "title": "Price"},
         "color": {
           "field": "Type",
           "type": "nominal",
           "title": "Building Type",
-          "scale": {"scheme": "reds"}
+          "scale": {"scheme": "category10"}
         },
         "tooltip": [
           {"field": "Type", "type": "nominal"},
           {"field": "Price", "type": "quantitative", "format": ","},
           {"field": "Rooms", "type": "quantitative", "format": ","},
-          {"field": "Suburb", "type": "nominal"},
-          {"field": "Longtitude", "type": "quantitative", "format": ","},
-          {"field": "Lattitude", "type": "quantitative", "format": ","}
+          {"field": "Suburb", "type": "nominal"}
         ]
       }
     }

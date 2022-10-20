@@ -7,15 +7,31 @@
   "data": {
     "url": "https://raw.githubusercontent.com/wleo0018/FIT3179/main/Melbourne_housing_FULL.csv"
   },
+  "transform": [
+    {"filter": "datum.Price != ''"},
+    {"filter": "Type_selection == null |datum.Type==Type_selection"}
+  ],
+  "params": [
+    {
+      "name": "Type_selection",
+      "bind": {
+        "input": "select",
+        "options": [null, "h", "t", "u"],
+        "labels": ["Show All", "House", "Townhouse", "Unit"],
+        "name": "Type Selection: "
+      }
+    }
+  ],
   "mark": "bar",
   "encoding": {
     "x": {
       "aggregate": "mean",
       "field": "Price",
       "type": "quantitative",
-      "title": "Count of Property"
+      "title": "Price (mean)"
     },
-    "y": {"field": "Regionname", "type": "nominal", "title": "Region"}
+    "y": {"field": "Regionname", "type": "nominal", "title": "Region"},
+    "color": {"field": "Type", "type": "nominal"}
   },
   "config": {}
 }

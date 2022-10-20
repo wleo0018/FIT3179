@@ -4,7 +4,7 @@
     "text": "Price based on number of bedroom, bathroom and car parking slot",
     "anchor": "middle"
   },
-  "width": 725,
+  "width": 650,
   "height": 525,
   "background": null,
   "data": {
@@ -12,7 +12,7 @@
   },
   "hconcat": [
     {
-      "width": 250,
+      "width": 200,
       "height": 275,
       "mark": "area",
       "encoding": {
@@ -21,7 +21,7 @@
       }
     },
     {
-      "width": 250,
+      "width": 200,
       "height": 275,
       "mark": "area",
       "encoding": {
@@ -30,7 +30,7 @@
       }
     },
     {
-      "width": 250,
+      "width": 200,
       "height": 275,
       "mark": "area",
       "encoding": {
@@ -39,13 +39,5 @@
       }
     }
   ],
-  "config": {
-    "axis": {"labelFont": "Open Sans", "titleFont": "Open Sans"},
-    "header": {"labelFont": "Open Sans", "titleFont": "Open Sans"},
-    "mark": {"font": "Open Sans"},
-    "legend": {"labelFont": "Open Sans", "titleFont": "Open Sans"},
-    "title": {"font": "Open Sans"},
-    "style": {"cell": {"stroke": "transparent"}},
-    "text": {"align": "center", "fontWeight": "bold", "font": "Open Sans"}
-  }
+  "config": {}
 }
